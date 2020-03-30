@@ -1,0 +1,76 @@
+2020-01-07T14:16:11.7023379+08:00 [INF] () Starting web host
+2020-01-07T14:16:24.8645564+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Google Ping" completed after 119.9852ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.google.com did not respond within 100 ms."'
+2020-01-07T14:16:25.3962157+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 660.9836ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:16:25.4686775+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 702.485ms with status Unhealthy and 'null'
+2020-01-07T14:16:29.1031721+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4333.417ms with status Degraded and 'null'
+2020-01-07T14:16:29.1031721+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4332.4396ms with status Degraded and 'null'
+2020-01-07T14:16:52.0276993+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 27272.6729ms with status Degraded and 'null'
+2020-01-07T14:16:52.3674231+08:00 [ERR] (AutoWrapper.AutoWrapperMiddleware) [500]: Unhandled Exception occurred. Unable to process the request.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "TestDB" requested by the login. The login failed.
+Login failed for user 'BSS-PH\dennip'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in C:\projects\dapper\Dapper\SqlMapper.Async.cs:line 419
+   at Epila.Ph.WebApi.Data.DbFactoryBase.DbQueryAsync[T](String sql, Object parameters) in C:\Users\dennip\Documents\Pita\e-pila.ph.api\Epila.Ph\Epila.Ph.WebApi\Epila.Ph.WebApi\Data\DbFactoryBase.cs:line 29
+   at Epila.Ph.WebApi.Data.DataManager.PersonManager.GetAllAsync() in C:\Users\dennip\Documents\Pita\e-pila.ph.api\Epila.Ph\Epila.Ph.WebApi\Epila.Ph.WebApi\Data\DataManager\PersonManager.cs:line 68
+   at Epila.Ph.WebApi.API.v1.PersonsController.Get() in C:\Users\dennip\Documents\Pita\e-pila.ph.api\Epila.Ph\Epila.Ph.WebApi\Epila.Ph.WebApi\API\v1\PersonsController.cs:line 38
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at AutoWrapper.Base.WrapperBase.InvokeAsyncBase(HttpContext context, AutoWrapperMembers awm)
+ClientConnectionId:cc35e49d-c00e-4f1b-a1d4-f6e26d8cea47
+Error Number:4060,State:1,Class:11
+2020-01-07T14:16:53.9830405+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: GET https localhost:44321/api/v1/persons   Responded with [500] in 30537ms
+2020-01-07T14:16:54.2037790+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: GET https localhost:44321/favicon.ico   Responded with [404] in 46ms
+2020-01-07T14:16:55.3688660+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: POST https localhost:44321/   Responded with [404] in 27ms
+2020-01-07T14:16:55.3933762+08:00 [ERR] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) The webhook notification has not executed successfully for "" webhook. The error code is NotFound.
+2020-01-07T14:17:01.9241309+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: GET https localhost:44321/api/v1/   Responded with [404] in 3ms
+2020-01-07T14:17:06.8467532+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 45.3723ms with status Unhealthy and 'null'
+2020-01-07T14:17:06.8569392+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Google Ping" completed after 56.9795ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.google.com did not respond within 100 ms."'
+2020-01-07T14:17:06.8778393+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 35.1815ms with status Degraded and 'null'
+2020-01-07T14:17:07.3508395+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 550.6711ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:17:10.9023506+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4101.8088ms with status Degraded and 'null'
+2020-01-07T14:17:10.9023485+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4101.7899ms with status Degraded and 'null'
+2020-01-07T14:17:10.9676050+08:00 [INF] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) Notification is sent on same window time.
+2020-01-07T14:17:21.3020483+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 21.0049ms with status Unhealthy and 'null'
+2020-01-07T14:17:21.3242535+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 43.046ms with status Degraded and 'null'
+2020-01-07T14:17:21.3503927+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 69.7026ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:17:21.3505049+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Google Ping" completed after 69.9267ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.google.com did not respond within 100 ms."'
+2020-01-07T14:17:25.3381988+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4057.1753ms with status Degraded and 'null'
+2020-01-07T14:17:25.3644816+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4083.5042ms with status Degraded and 'null'
+2020-01-07T14:17:25.3936901+08:00 [INF] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) Notification is sent on same window time.
+2020-01-07T14:17:35.6625411+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 50.9913ms with status Unhealthy and 'null'
+2020-01-07T14:17:35.6632685+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 51.3467ms with status Degraded and 'null'
+2020-01-07T14:17:35.8505547+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 239.0044ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:17:39.6815253+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4069.7077ms with status Degraded and 'null'
+2020-01-07T14:17:39.7069886+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4095.3896ms with status Degraded and 'null'
+2020-01-07T14:17:39.7330823+08:00 [INF] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) Notification is sent on same window time.
+2020-01-07T14:17:46.5884757+08:00 [INF] (IdentityServer4.AccessTokenValidation.IdentityServerAuthenticationHandler) AuthenticationScheme: "Bearer" was challenged.
+2020-01-07T14:17:46.6230291+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: POST https localhost:44321/api/v1/SampleApi  {"firstName":"string","lastName":"string"} Responded with [401] in 458ms
+2020-01-07T14:17:49.9850948+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 32.4819ms with status Unhealthy and 'null'
+2020-01-07T14:17:50.0173210+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 64.8343ms with status Degraded and 'null'
+2020-01-07T14:17:50.3501794+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 398.1015ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:17:54.0520880+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4099.8477ms with status Degraded and 'null'
+2020-01-07T14:17:54.0520835+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4099.8323ms with status Degraded and 'null'
+2020-01-07T14:17:54.0775778+08:00 [INF] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) Notification is sent on same window time.
+2020-01-07T14:18:00.3343343+08:00 [INF] (IdentityServer4.AccessTokenValidation.IdentityServerAuthenticationHandler) AuthenticationScheme: "Bearer" was challenged.
+2020-01-07T14:18:00.3351779+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: GET https localhost:44321/api/v1/SampleApi/1   Responded with [401] in 4ms
+2020-01-07T14:18:04.3344115+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "SQL" completed after 62.4704ms with status Degraded and 'null'
+2020-01-07T14:18:04.3537899+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "PostgreSQL" completed after 81.7588ms with status Unhealthy and 'null'
+2020-01-07T14:18:04.3555203+08:00 [ERR] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Bing Ping" completed after 84.2748ms with status Unhealthy and '"Ping check status [TimedOut]. Host www.bing.com did not respond within 100 ms."'
+2020-01-07T14:18:08.3770696+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "External Api" completed after 4105.6418ms with status Degraded and 'null'
+2020-01-07T14:18:08.3773455+08:00 [WRN] (Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService) Health check "Auth Server" completed after 4106.0366ms with status Degraded and 'null'
+2020-01-07T14:18:08.6227003+08:00 [INF] (AutoWrapper.AutoWrapperMiddleware) Request: POST https localhost:44321/   Responded with [404] in 1ms
+2020-01-07T14:18:08.6392323+08:00 [ERR] (HealthChecks.UI.Core.Notifications.WebHookFailureNotifier) The webhook notification has not executed successfully for "" webhook. The error code is NotFound.

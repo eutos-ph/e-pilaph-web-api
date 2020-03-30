@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epila.Ph.WebApi", "Epila.Ph.WebApi\Epila.Ph.WebApi\Epila.Ph.WebApi.csproj", "{6EA8832B-666E-4C02-9E4D-A36DD33402C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epila.Ph.WebApi.Test", "Epila.Ph.WebApi\Epila.Ph.WebApi.Test\Epila.Ph.WebApi.Test.csproj", "{D3A3019C-ED47-4237-8528-F3B67ECFE5E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epila.Ph.Api", "Epila.Ph.Api\Epila.Ph.Api\Epila.Ph.Api.csproj", "{007BA10A-4E46-46DC-8CE9-90977CC5D2D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epila.Ph.Api.Test", "Epila.Ph.Api\Epila.Ph.Api.Test\Epila.Ph.Api.Test.csproj", "{4F2AECB4-A750-441D-BA61-7492DC6BB200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EA8832B-666E-4C02-9E4D-A36DD33402C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA8832B-666E-4C02-9E4D-A36DD33402C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA8832B-666E-4C02-9E4D-A36DD33402C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA8832B-666E-4C02-9E4D-A36DD33402C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A3019C-ED47-4237-8528-F3B67ECFE5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A3019C-ED47-4237-8528-F3B67ECFE5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A3019C-ED47-4237-8528-F3B67ECFE5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A3019C-ED47-4237-8528-F3B67ECFE5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007BA10A-4E46-46DC-8CE9-90977CC5D2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007BA10A-4E46-46DC-8CE9-90977CC5D2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007BA10A-4E46-46DC-8CE9-90977CC5D2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007BA10A-4E46-46DC-8CE9-90977CC5D2D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2AECB4-A750-441D-BA61-7492DC6BB200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2AECB4-A750-441D-BA61-7492DC6BB200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2AECB4-A750-441D-BA61-7492DC6BB200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2AECB4-A750-441D-BA61-7492DC6BB200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {261BABCF-5B37-4EDB-B33D-628E098CF427}
+	EndGlobalSection
+EndGlobal
