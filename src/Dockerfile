@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Epila.Ph.Api/Epila.Ph.Api/Epila.Ph.Api.csproj", "Epila.Ph.Api/Epila.Ph.Api/"]
+COPY ["src/Epila.Ph.Api/Epila.Ph.Api/Epila.Ph.Api.csproj", "Epila.Ph.Api/Epila.Ph.Api/"]
 RUN dotnet restore "Epila.Ph.Api/Epila.Ph.Api/Epila.Ph.Api.csproj"
 COPY . .
 WORKDIR "/src/Epila.Ph.Api/Epila.Ph.Api"
