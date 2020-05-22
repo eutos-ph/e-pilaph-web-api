@@ -5,7 +5,7 @@
 
  jobs:
   build:
-    working_directory: /temp
+    working_directory: /src
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1  
     environment:
@@ -13,6 +13,5 @@
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
     steps:
       - checkout
-      - run: dotnet restore
-      - run: dotnet build
-      - run: dotnet run
+      - run: dotnet restore src/Epila.Ph.Api/Epila.Ph.Api/Epila.Ph.Api.csproj
+      - run: dotnet build src/Epila.Ph.Api/Epila.Ph.Api/Epila.Ph.Api.csproj
