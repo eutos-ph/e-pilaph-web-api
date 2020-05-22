@@ -5,8 +5,14 @@
 
  jobs:
    build:
-     executor: win/default     
-    
+     docker:
+       - image: mcr.microsoft.com/dotnet/core/sdk:3.1     
      steps:
        - checkout
-       - run: dotnet build
+       - run:
+          name: Dotnet Restore
+          command:
+            dotnet restore
+       - run:
+          name: Build App
+          command: dotnet build
